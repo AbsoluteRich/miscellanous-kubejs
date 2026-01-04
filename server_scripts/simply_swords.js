@@ -28,6 +28,8 @@ let RARE_ITEM = "minecraft:heart_of_the_sea" // Previously: Enchanted Golden App
 let WAXY_ITEM = "minecraft:candle"
 let BUZZY_ITEM = "minecraft:honeycomb_block"
 let ASTRAL_ITEM = "irons_spellbooks:divine_pearl"  // Placeholder
+let HEAVY_ITEM = "minecraft:iron_block"
+let STORMY_ITEM = "minecraft:lightning_rod"
 
 ServerEvents.recipes((kubejs) => {
     // Removes standard recipe uses
@@ -329,7 +331,7 @@ ServerEvents.recipes((kubejs) => {
         "simplyswords:ribboncleaver",
         CORE_ITEM,
         CLAYMORE,
-        ASTRAL_ITEM  // Placeholder, until I get a good idea
+        HEAVY_ITEM
     )
 
     // Decaying Relic (+ Magiscythe, Magispear, and Magiblade)
@@ -340,12 +342,12 @@ ServerEvents.recipes((kubejs) => {
         ARCANE_ITEM
     )
 
-    // Engima
+    // Enigma
     kubejs.recipes.smithing(
         "simplyswords:enigma",
         CORE_ITEM,
         CLAYMORE,
-        SPEEDY_ITEM
+        STORMY_ITEM
     )
 
     // Caelestis
