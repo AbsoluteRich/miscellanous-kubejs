@@ -62,7 +62,7 @@ ServerEvents.recipes((kubejs) => {
         }
     })
 
-    // This mod is so broken I'm not chancing the crushing recipe
+    // Mekanism JS is so obtuse I'm not chancing the crushing recipe
     kubejs.custom({
         type: "mekanism:crushing",
         input: {

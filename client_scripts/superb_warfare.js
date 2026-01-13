@@ -12,5 +12,4 @@ JEIEvents.hideItems(kubejs => {
 ClientEvents.lang("en_us", kubejs => {
     kubejs.renameItem("superbwarfare:tungsten_powder", "Tungsten Dust")
     kubejs.renameItem("superbwarfare:raw_cemented_carbide_powder", "Cemented Carbide Dust")
-    kubejs.renameItem("create:powdered_obsidian", "Obsidian Dust")
 })
