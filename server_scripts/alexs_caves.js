@@ -1,5 +1,7 @@
+let template = "iceandfire:dread_stone"  // Alternatively: appflux:sky_harden_insulating_resin
+let upgradeableItem = "supplementaries:ash_brick"
+
 ServerEvents.recipes((kubejs) => {
-    // appflux:sky_harden_insulating_resin
     kubejs.custom({
         type: "mekanism:crushing",
         input: {
@@ -8,50 +10,50 @@ ServerEvents.recipes((kubejs) => {
             }
         },
         output: {
-            item: "iceandfire:dread_stone"
+            item: template
         }
     })
 
     // Item.of('minecraft:enchanted_book', '{StoredEnchantments:[{lvl:1,id:"minecraft:sweeping"}]}')
     kubejs.smithing(
         Item.of("alexscaves:cave_tablet", "{CaveBiome:'alexscaves:magnetic_caves'}"),  // Output
-        "iceandfire:dread_stone", // Smithing template
-        "supplementaries:ash_brick", // Item to be upgraded
+        template, // Smithing template
+        upgradeableItem, // Item to be upgraded
         "minecraft:black_dye" // Upgrade item
     )
 
     kubejs.smithing(
         Item.of("alexscaves:cave_tablet", "{CaveBiome:'alexscaves:primordial_caves'}"),
-        "iceandfire:dread_stone",
-        "supplementaries:ash_brick",
+        template,
+        upgradeableItem,
         "minecraft:yellow_dye"
     )
 
     kubejs.smithing(
         Item.of("alexscaves:cave_tablet", "{CaveBiome:'alexscaves:toxic_caves'}"),
-        "iceandfire:dread_stone",
-        "supplementaries:ash_brick",
+        template,
+        upgradeableItem,
         "minecraft:lime_dye"
     )
 
     kubejs.smithing(
         Item.of("alexscaves:cave_tablet", "{CaveBiome:'alexscaves:abyssal_chasm'}"),
-        "iceandfire:dread_stone",
-        "supplementaries:ash_brick",
+        template,
+        upgradeableItem,
         "minecraft:blue_dye"
     )
 
     kubejs.smithing(
         Item.of("alexscaves:cave_tablet", "{CaveBiome:'alexscaves:forlorn_hollows'}"),
-        "iceandfire:dread_stone",
-        "supplementaries:ash_brick",
+        template,
+        upgradeableItem,
         "minecraft:brown_dye"
     )
 
     kubejs.smithing(
         Item.of("alexscaves:cave_tablet", "{CaveBiome:'alexscaves:candy_cavity'}"),
-        "iceandfire:dread_stone",
-        "supplementaries:ash_brick",
+        template,
+        upgradeableItem,
         "minecraft:pink_dye"
     )
 });
