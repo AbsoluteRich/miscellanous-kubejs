@@ -27,7 +27,7 @@ const arcaneItem = "irons_spellbooks:arcane_ingot"
 const rareItem = "minecraft:heart_of_the_sea" // Previously: Enchanted Golden Apple
 const waxyItem = "minecraft:candle"
 const buzzyItem = "minecraft:honeycomb_block"
-const astralItem = "irons_spellbooks:divine_pearl"  // Placeholder
+const astralItem = "minecraft:clock"  // Previously: Divine Pearl
 const heavyItem = "minecraft:iron_block"
 const stormyItem = "minecraft:lightning_rod"
 

@@ -1,4 +1,4 @@
-let template = "iceandfire:dread_stone"  // Alternatively: appflux:sky_harden_insulating_resin
+let template = "iceandfire:dread_stone"
 let upgradeableItem = "supplementaries:ash_brick"
 
 ServerEvents.recipes((kubejs) => {
