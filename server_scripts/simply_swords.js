@@ -21,15 +21,14 @@ const darkItem = "alexscaves:pure_darkness"
 const electricItem = "irons_spellbooks:energized_core"  // Previously: Bottle o' Lightning
 const toxicItem = "minecraft:spore_blossom"  // Previously: Poisonous Potato
 const soulItem = "minecraft:echo_shard"  // Previously: Sculk Catalyst
-const speedyItem = "minecraft:mushroom_stew"  // It makes a Haste Potion with Apotheosis installed
-const iceyItem = "minecraft:blue_ice"
+const speedyItem = "irons_spellbooks:blood_vial"  // Previously: Mushroom Stew, since it makes a Haste Potion with Apotheosis installed
+const iceyItem = "irons_spellbooks:permafrost_shard"  // Previously: Blue Ice
 const arcaneItem = "irons_spellbooks:arcane_ingot"
 const rareItem = "minecraft:heart_of_the_sea" // Previously: Enchanted Golden Apple
 const waxyItem = "minecraft:candle"
 const buzzyItem = "minecraft:honeycomb_block"
 const astralItem = "minecraft:clock"  // Previously: Divine Pearl
-const heavyItem = "minecraft:iron_block"
-const stormyItem = "minecraft:lightning_rod"
+const stormyItem = "irons_spellbooks:lightning_bottle"  // Previously: Lightning Rod
 
 ServerEvents.recipes((kubejs) => {
     // Removes standard recipe uses
@@ -315,7 +314,7 @@ ServerEvents.recipes((kubejs) => {
         "simplyswords:tempest",
         coreItem,
         chakram,
-        astralItem
+        stormyItem
     )
 
     // Flamewind
@@ -331,7 +330,7 @@ ServerEvents.recipes((kubejs) => {
         "simplyswords:ribboncleaver",
         coreItem,
         claymore,
-        heavyItem
+        speedyItem
     )
 
     // Decaying Relic (+ Magiscythe, Magispear, and Magiblade)
