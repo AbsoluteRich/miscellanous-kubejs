@@ -30,6 +30,13 @@ const buzzyItem = "minecraft:honeycomb_block"
 const astralItem = "minecraft:clock"  // Previously: Divine Pearl
 const stormyItem = "irons_spellbooks:lightning_bottle"  // Previously: Lightning Rod
 
+ServerEvents.tags("item", kubejs => {
+    kubejs.add("kubejs:alexs_caves_boss_drop", "alexscaves:tectonic_shard")
+    kubejs.add("kubejs:alexs_caves_boss_drop", "traveloptics:hullbreaker_scales")
+    kubejs.add("kubejs:alexs_caves_boss_drop", "alexscaves:pure_darkness")
+    kubejs.add("kubejs:alexs_caves_boss_drop", "alexscaves:radiant_essence")
+});
+
 ServerEvents.recipes((kubejs) => {
     // Removes standard recipe uses
     // Repurposing a seemingly useless item
@@ -45,9 +52,9 @@ ServerEvents.recipes((kubejs) => {
         "irons_spellbooks:arcane_ingot",  // Miscellanous difficult-to-obtain item
         "irons_spellbooks:arcane_ingot",
         "irons_spellbooks:arcane_ingot",
-        "alexscaves:tectonic_shard",  // Requires progression into Alex's Caves and defeating of a boss
-        "alexscaves:tectonic_shard",
-        "alexscaves:tectonic_shard",
+        "#kubejs:alexs_caves_boss_drop",  // Requires progression into Alex's Caves and defeating of a boss
+        "#kubejs:alexs_caves_boss_drop",
+        "#kubejs:alexs_caves_boss_drop",
         "minecraft:totem_of_undying",  // Requires defeating a raid
     ],  // Input
         "minecraft:nether_star",  // Reagent, requires defeating a boss
