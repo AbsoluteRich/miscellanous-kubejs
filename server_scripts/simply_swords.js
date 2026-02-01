@@ -337,7 +337,7 @@ ServerEvents.recipes((kubejs) => {
         "simplyswords:ribboncleaver",
         coreItem,
         claymore,
-        speedyItem
+        arcaneItem  // This would be a speedy item, but a recipe already uses that
     )
 
     // Decaying Relic (+ Magiscythe, Magispear, and Magiblade)
