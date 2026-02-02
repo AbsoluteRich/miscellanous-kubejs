@@ -1,5 +1,5 @@
-let template = "iceandfire:dread_stone"
-let upgradeableItem = "supplementaries:ash_brick"
+const tabletTemplate = "iceandfire:dread_stone"
+const tabletUpgradeItem = "supplementaries:ash_brick"
 
 ServerEvents.recipes((kubejs) => {
     kubejs.custom({
@@ -10,50 +10,50 @@ ServerEvents.recipes((kubejs) => {
             }
         },
         output: {
-            item: template
+            item: tabletTemplate
         }
     })
 
     // Item.of('minecraft:enchanted_book', '{StoredEnchantments:[{lvl:1,id:"minecraft:sweeping"}]}')
     kubejs.smithing(
         Item.of("alexscaves:cave_tablet", "{CaveBiome:'alexscaves:magnetic_caves'}"),  // Output
-        template, // Smithing template
-        upgradeableItem, // Item to be upgraded
+        tabletTemplate, // Smithing template
+        tabletUpgradeItem, // Item to be upgraded
         "minecraft:black_dye" // Upgrade item
     )
 
     kubejs.smithing(
         Item.of("alexscaves:cave_tablet", "{CaveBiome:'alexscaves:primordial_caves'}"),
-        template,
-        upgradeableItem,
+        tabletTemplate,
+        tabletUpgradeItem,
         "minecraft:yellow_dye"
     )
 
     kubejs.smithing(
         Item.of("alexscaves:cave_tablet", "{CaveBiome:'alexscaves:toxic_caves'}"),
-        template,
-        upgradeableItem,
+        tabletTemplate,
+        tabletUpgradeItem,
         "minecraft:lime_dye"
     )
 
     kubejs.smithing(
         Item.of("alexscaves:cave_tablet", "{CaveBiome:'alexscaves:abyssal_chasm'}"),
-        template,
-        upgradeableItem,
+        tabletTemplate,
+        tabletUpgradeItem,
         "minecraft:blue_dye"
     )
 
     kubejs.smithing(
         Item.of("alexscaves:cave_tablet", "{CaveBiome:'alexscaves:forlorn_hollows'}"),
-        template,
-        upgradeableItem,
+        tabletTemplate,
+        tabletUpgradeItem,
         "minecraft:brown_dye"
     )
 
     kubejs.smithing(
         Item.of("alexscaves:cave_tablet", "{CaveBiome:'alexscaves:candy_cavity'}"),
-        template,
-        upgradeableItem,
+        tabletTemplate,
+        tabletUpgradeItem,
         "minecraft:pink_dye"
     )
 });

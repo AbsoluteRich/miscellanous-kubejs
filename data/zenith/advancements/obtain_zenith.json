@@ -1,0 +1,34 @@
+{
+    "criteria": {
+        "zenith": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "zenith:zenith"
+                        ]
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        }
+    },
+    "display": {
+        "announce_to_chat": true,
+        "description": "Obtain the Zenith, the culmination of a journey forged into the ultimate sword.",
+        "frame": "challenge",
+        "hidden": false,
+        "icon": {
+            "item": "zenith:zenith"
+        },
+        "show_toast": true,
+        "title": "Infinity +1 Sword",
+        "background": "minecraft:textures/block/deepslate.png"
+    },
+    "requirements": [
+        [
+            "zenith"
+        ]
+    ],
+    "sends_telemetry_event": true
+}

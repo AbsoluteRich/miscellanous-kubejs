@@ -2,24 +2,24 @@ const frostCost = "adamsarsplus:frost_soul"
 const flameCost = "adamsarsplus:flame_soul"
 const earthCost = "adamsarsplus:earth_soul"
 
-const replacementMappings = {
+const adamArmourMappings = {
     // Frost
-    "adamsarsplus:cade_hood": ["#kubejs:freezable_helmets", frostCost],
-    "adamsarsplus:cade_robes": ["#kubejs:freezable_chestplates", frostCost],
-    "adamsarsplus:cade_leggings": ["#kubejs:freezable_leggings", frostCost],
-    "adamsarsplus:cade_boots": ["#kubejs:freezable_boots", frostCost],
+    "adamsarsplus:cade_hood": { reagent: "#kubejs:freezable_helmets", soul: frostCost },
+    "adamsarsplus:cade_robes": { reagent: "#kubejs:freezable_chestplates", soul: frostCost },
+    "adamsarsplus:cade_leggings": { reagent: "#kubejs:freezable_leggings", soul: frostCost },
+    "adamsarsplus:cade_boots": { reagent: "#kubejs:freezable_boots", soul: frostCost },
 
     // Flame
-    "adamsarsplus:ryan_hood": ["ars_elemental:fire_hat", flameCost],
-    "adamsarsplus:ryan_robes": ["ars_elemental:fire_robes", flameCost],
-    "adamsarsplus:ryan_leggings": ["ars_elemental:fire_leggings", flameCost],
-    "adamsarsplus:ryan_boots": ["ars_elemental:fire_boots", flameCost],
+    "adamsarsplus:ryan_hood": { reagent: "ars_elemental:fire_hat", soul: flameCost },
+    "adamsarsplus:ryan_robes": { reagent: "ars_elemental:fire_robes", soul: flameCost },
+    "adamsarsplus:ryan_leggings": { reagent: "ars_elemental:fire_leggings", soul: flameCost },
+    "adamsarsplus:ryan_boots": { reagent: "ars_elemental:fire_boots", soul: flameCost },
 
     // Earth
-    "adamsarsplus:nick_hood": ["ars_elemental:earth_hat", earthCost],
-    "adamsarsplus:nick_robes": ["ars_elemental:earth_robes", earthCost],
-    "adamsarsplus:nick_leggings": ["ars_elemental:earth_leggings", earthCost],
-    "adamsarsplus:nick_boots": ["ars_elemental:earth_boots", earthCost]
+    "adamsarsplus:nick_hood": { reagent: "ars_elemental:earth_hat", soul: earthCost },
+    "adamsarsplus:nick_robes": { reagent: "ars_elemental:earth_robes", soul: earthCost },
+    "adamsarsplus:nick_leggings": { reagent: "ars_elemental:earth_leggings", soul: earthCost },
+    "adamsarsplus:nick_boots": { reagent: "ars_elemental:earth_boots", soul: earthCost },
 };
 
 ServerEvents.tags("item", kubejs => {
@@ -42,11 +42,11 @@ ServerEvents.recipes((kubejs) => {
     kubejs.remove({ id: "toomanyglyphs:glyph_amplify_three" });
 
     // Add Ars Elemental to the Ars Plus armour progression
-    let replacements = Object.entries(replacementMappings);
-    replacements.forEach((mapping) => {
+    Object.entries(adamArmourMappings)
+    .forEach((mapping) => {
         let oldItem = mapping[0];
-        let newItem = mapping[1][0];
-        let soul = mapping[1][1];
+        let newItem = mapping[1].reagent;
+        let soul = mapping[1].soul;
         let replacementReagent;
 
         // Tag or item?
