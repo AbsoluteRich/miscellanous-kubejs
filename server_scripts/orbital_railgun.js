@@ -1,11 +1,3 @@
-ServerEvents.tags("item", kubejs => {
-    // kubejs.add("kubejs:energy_weapon", "superbwarfare:repair_tool")
-    // kubejs.add("kubejs:energy_weapon", "superbwarfare:taser")
-    kubejs.add("kubejs:energy_weapon", "superbwarfare:ql_1031")
-    kubejs.add("kubejs:energy_weapon", "superbwarfare:sentinel")
-    kubejs.add("kubejs:energy_weapon", "superbwarfare:secondary_cataclysm")
-});
-
 ServerEvents.recipes((kubejs) => {
     kubejs.remove({ id: "orbital_railgun:orbital_railgun" })
 
@@ -15,8 +7,9 @@ ServerEvents.recipes((kubejs) => {
         inputs: [
             "1 superbwarfare:heavy_armament_module",
             "3 #forge:storage_blocks/steel",
+            "1 minecraft:nether_star",
             "32 superbwarfare:laser_unit",
-            "1 #kubejs:energy_weapon",
+            "1 superbwarfare:medium_battery_pack",
             "1 superbwarfare:monitor",
         ],
         result: {
