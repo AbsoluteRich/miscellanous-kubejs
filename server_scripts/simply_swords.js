@@ -131,7 +131,8 @@ ServerEvents.recipes((kubejs) => {
     )
 
     // Making Runic Tablets renewable
-    kubejs.shaped(Item.of("simplyswords:runic_tablet"),
+    kubejs.shaped(
+        "2x simplyswords:runic_tablet",
         [
             "DRD",
             "DBD",
