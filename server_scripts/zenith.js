@@ -1,25 +1,53 @@
 function getWeaponsFromType(type) {
-    let selectWeapons = [];
+    let identifiedWeapons = [];
 
     simplyWeaponMappings[type]
         .forEach(weapon => {
-            selectWeapons.push(weapon.output);
+            // Special cases
+            if (weapon.output === "simplyswords:slumbering_lichblade") {
+                identifiedWeapons.push("#kubejs:lichblades")
+            }
+            else if (weapon.output === "simplyswords:decaying_relic") {
+                identifiedWeapons.push("#kubejs:magical_relics")
+            }
+            else {
+                identifiedWeapons.push(weapon.output);
+            }
+
         });
 
-    return selectWeapons;
+    console.log("Identified weapons for " + type + ": " + identifiedWeapons)
+    return identifiedWeapons;
 }
+
+ServerEvents.tags("item", kubejs => {
+    kubejs.add("kubejs:lichblades", "simplyswords:slumbering_lichblade")
+    kubejs.add("kubejs:lichblades", "simplyswords:waking_lichblade")
+    kubejs.add("kubejs:lichblades", "simplyswords:awakened_lichblade")
+
+    kubejs.add("kubejs:magical_relics", "simplyswords:decaying_relic")
+    kubejs.add("kubejs:magical_relics", "simplyswords:magiscythe")
+    kubejs.add("kubejs:magical_relics", "simplyswords:magispear")
+    kubejs.add("kubejs:magical_relics", "simplyswords:magiblade")
+
+    kubejs.add("kubejs:sunfires", "simplyswords:righteous_relic")
+    kubejs.add("kubejs:sunfires", "simplyswords:sunfire")
+
+    kubejs.add("kubejs:harbingers", "simplyswords:tainted_relic")
+    kubejs.add("kubejs:harbingers", "simplyswords:harbinger")
+});
 
 ServerEvents.recipes((kubejs) => {
     kubejs.remove({ id: "zenith:zenith" })
 
     kubejs.shapeless(
         "kubejs:molten_amalgam",
-        getWeaponsFromType("fieryItem")
+        getWeaponsFromType("fieryItem").concat("#kubejs:sunfires")
     )
 
     kubejs.shapeless(
         "kubejs:cursed_amalgam",
-        getWeaponsFromType("darkItem").concat(getWeaponsFromType("soulItem"))
+        getWeaponsFromType("darkItem").concat(getWeaponsFromType("soulItem")).concat("#kubejs:harbingers")
     )
 
     kubejs.shapeless(
