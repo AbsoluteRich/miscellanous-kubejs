@@ -22,4 +22,16 @@ ServerEvents.recipes((kubejs) => {
             item: "minecraft:honeycomb"
         }
     })
+
+    kubejs.custom({
+        type: "functionalstorage:custom_compacting",
+        higher_input: {
+            count: 1,
+            item: "minecraft:snow_block"
+        },
+        lower_input: {
+            count: 4,
+            item: "minecraft:snowball"
+        }
+    })
 });
