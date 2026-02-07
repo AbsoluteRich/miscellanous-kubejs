@@ -34,4 +34,16 @@ ServerEvents.recipes((kubejs) => {
             item: "minecraft:snowball"
         }
     })
+
+    kubejs.custom({
+        type: "functionalstorage:custom_compacting",
+        higher_input: {
+            count: 1,
+            item: "mekanism:block_charcoal"
+        },
+        lower_input: {
+            count: 9,
+            item: "minecraft:charcoal"
+        }
+    })
 });
