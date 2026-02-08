@@ -8,25 +8,30 @@ ServerEvents.recipes((kubejs) => {
 
     kubejs.recipes.create.sequenced_assembly(
         "kubejs:honeycomb_mold",  // Output(s)
-        "create:cardboard",
+        "create:cardboard",  // Input
         [  // Sequence
-            event.recipes.create.deploying(honeycombTransitional, [honeycombTransitional, "minecraft:honeycomb"]),
-            event.recipes.create.pressing(honeycombTransitional, honeycombTransitional),
-            event.recipes.create.pressing(honeycombTransitional, honeycombTransitional),
+            kubejs.recipes.create.deploying(honeycombTransitional, [honeycombTransitional, "minecraft:honeycomb"]),
+            kubejs.recipes.create.pressing(honeycombTransitional, honeycombTransitional),
+            kubejs.recipes.create.pressing(honeycombTransitional, honeycombTransitional),
         ]
-        .transitionalItem(honeycombTransitional)
-    )
+    ).transitionalItem(honeycombTransitional).loops(1)
 
     // Produce honey from honeycomb
     kubejs.recipes.create.mixing(
         Fluid.of("create:honey", 250),  // Output(s)
-        "minecraft:honeycomb"  // Input(s), replace this with #forge:honey
+        "minecraft:honeycomb",  // Input(s), replace this with #forge:honey
     ).heated()
 
     // Produce honeycomb from honey
     kubejs.recipes.create.compacting(
-        "minecraft:honeycomb",
-        Fluid.of("create:honey", 250),
+        [
+            "minecraft:honeycomb",
+            "kubejs:honeycomb_mold",
+        ],
+        [
+            Fluid.of("create:honey", 250),
+            "kubejs:honeycomb_mold",
+        ]
     )
 
     // Produce obsidian from fluids
@@ -34,7 +39,7 @@ ServerEvents.recipes((kubejs) => {
         "minecraft:obsidian",
         [
             Fluid.of("minecraft:water", 250),
-            Fluid.of("minecraft:lava", 250)
+            Fluid.of("minecraft:lava", 250),
         ]
     )
 });
