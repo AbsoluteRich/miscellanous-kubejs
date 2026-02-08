@@ -2,7 +2,8 @@ ServerEvents.recipes((kubejs) => {
     // With these recipes, you can produce slightly more honeycomb by pumping honey from beehives compared to just shearing them regularly
     // This may be a balancing concern?? Honey has so little uses I don't feel like implementing a solution
 
-    // Honeycomb mold
+    // Honeycomb mold, swiping an idea from [Create: Easy Bee Products](https://www.curseforge.com/minecraft/mc-mods/create-easy-bee-products)
+    // Just learnt that [Create: Fluid](https://www.curseforge.com/minecraft/mc-mods/create-fluid) exists which does this same thing but better :(
     const honeycombTransitional = "kubejs:incomplete_honeycomb_mold"
 
     kubejs.recipes.create.sequenced_assembly(
