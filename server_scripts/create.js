@@ -42,4 +42,15 @@ ServerEvents.recipes((kubejs) => {
             Fluid.of("minecraft:lava", 250),
         ]
     )
+
+    // Allow Biofuel to be produced from biomass from other mods
+    kubejs.remove({ id: "createaddition:mixing/bioethanol" })
+    kubejs.recipes.create.mixing(
+        Fluid.of("createaddition:bioethanol", 125),
+        [
+            "minecraft:sugar",
+            "create:cinder_flour",
+            "2x #forge:fuels"
+        ]
+    )
 });
