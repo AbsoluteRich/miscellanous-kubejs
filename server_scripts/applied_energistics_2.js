@@ -20,4 +20,14 @@ ServerEvents.recipes((kubejs) => {
             Fluid.of("minecraft:water", 250)
         ]
     )
+
+    kubejs.recipes.create.mixing(
+        "2x megacells:sky_steel_ingot",
+        [
+            "ae2:charged_certus_quartz_crystal",
+            "minecraft:iron_ingot",
+            "ae2:sky_stone_block",
+            Fluid.of("minecraft:lava", 250)
+        ]
+    )
 });
