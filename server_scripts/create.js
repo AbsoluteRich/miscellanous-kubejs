@@ -18,8 +18,14 @@ ServerEvents.recipes((kubejs) => {
 
     // Produce honey from honeycomb
     kubejs.recipes.create.mixing(
-        Fluid.of("create:honey", 250),  // Output(s)
-        "minecraft:honeycomb",  // Input(s), replace this with #forge:honey
+        Fluid.of("create:honey", 250),  // Output(s), replace this with #forge:honey
+        "minecraft:honeycomb",  // Input(s)
+    ).heated()
+
+    // Produce honey from honeycomb block
+    kubejs.recipes.create.mixing(
+        Fluid.of("create:honey", 1000),
+        "minecraft:honeycomb_block",
     ).heated()
 
     // Produce honeycomb from honey
