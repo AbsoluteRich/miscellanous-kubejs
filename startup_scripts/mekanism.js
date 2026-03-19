@@ -1,3 +1,3 @@
-StartupEvents.registry("mekanism:infuse_type", event => {
-    event.create("kubejs:steel").displayName("Steel")
+StartupEvents.registry("mekanism:infuse_type", kubejs => {
+    kubejs.create("kubejs:steel").displayName("Steel")
 })

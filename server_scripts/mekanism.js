@@ -26,7 +26,7 @@ ServerEvents.recipes((kubejs) => {
     })
 
     kubejs.custom({
-        type: "mekanism:crushing",
+        type: "mekanism:enriching",
         input: {
             ingredient: {
                 item: "minecraft:sugar_cane"
