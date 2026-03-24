@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "create:netherite_backtank",
+    "mekanism:jetpack_armored"
+  ]
+}
