@@ -39,7 +39,7 @@ ServerEvents.recipes((kubejs) => {
 
     // Biofuel recipes for modded crops
     // Seeds
-    let crushableCrops = {
+    const crushableCrops = {
         // Todo: Ars logs and Ars fruits, Farmer's Delight mushrooms and wild bushes, Twilight saplings and leaves, Tinkers saplings and leaves
         2: [
             "supplementaries:flax_seeds",
@@ -60,19 +60,41 @@ ServerEvents.recipes((kubejs) => {
         ]
     }
 
-    crushableCrops.forEach(biofuelCount, crops => {
-        crops.forEach(item_id => {
+    // Object.entries(crushableCrops).forEach(([biofuelCount, crops]) => {
+    //     crops.forEach(cropId => {
+    //         kubejs.custom({
+    //             type: "mekanism:crushing",
+    //             input: {
+    //                 ingredient: {
+    //                     item: cropId
+    //                 }
+    //             },
+    //             output: {
+    //                 item: Item.of("mekanism:bio_fuel", biofuelCount)
+    //             }
+    //         })
+    //     })
+    // })
+
+    // Fixme: Fuck this shit
+    for (let biofuelCount in crushableCrops) {
+        let crops = crushableCrops[biofuelCount]
+
+        console.log("shit " + crops)
+
+        crops.forEach(cropId => {
             kubejs.custom({
                 type: "mekanism:crushing",
                 input: {
                     ingredient: {
-                        item: item_id
+                        item: cropId
                     }
                 },
                 output: {
-                    item: Item.of("mekanism_bio_fuel", biofuelCount)
+                    item: "mekanism:bio_fuel",
+                    count: Number(biofuelCount)
                 }
             })
         })
-    })
+    }
 })
