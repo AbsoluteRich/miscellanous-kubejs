@@ -1,3 +1,8 @@
+ServerEvents.tags("item", kubejs => {
+    // This allows Ancient Debris to be blacklisted in a Tag Export Bus exporting #forge:ores
+    kubejs.add("kubejs:ancient_debris", "minecraft:ancient_debris")
+});
+
 ServerEvents.recipes((kubejs) => {
     kubejs.custom({
         type: "mekanism:crushing",
