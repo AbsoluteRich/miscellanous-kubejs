@@ -3,7 +3,7 @@ ItemEvents.tooltip(event => {
         "create:copper_backtank",
         "mekanism:jetpack",
         "mekanism:free_runners",
-    ], "Upgrade these items to be able to equip them in your Curios slot.")
+    ], "Upgrade this item to be able to equip it in your Curios slots.")
 
     event.add([
         "create:netherite_backtank",
