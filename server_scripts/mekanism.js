@@ -37,6 +37,18 @@ ServerEvents.recipes((kubejs) => {
         }
     })
 
+    kubejs.custom({
+        type: "mekanism:enriching",
+        input: {
+            ingredient: {
+                item: "supplementaries:flax"
+            }
+        },
+        output: {
+            item: "2x minecraft:string"
+        }
+    })
+
     // Biofuel recipes for modded crops
     // Seeds
     const crushableCrops = {
@@ -51,7 +63,6 @@ ServerEvents.recipes((kubejs) => {
             "farmersdelight:tomato_seeds",
         ],
         5: [
-            "supplementaries:flax",
             "ars_nouveau:magebloom",
             "alexsmobs:banana",
             "farmersdelight:cabbage",
@@ -79,8 +90,6 @@ ServerEvents.recipes((kubejs) => {
     // Fixme: Fuck this shit
     for (let biofuelCount in crushableCrops) {
         let crops = crushableCrops[biofuelCount]
-
-        console.log("shit " + crops)
 
         crops.forEach(cropId => {
             kubejs.custom({
