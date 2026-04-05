@@ -1,5 +1,6 @@
 ServerEvents.recipes((kubejs) => {
     // Warium tool processing recipes for Create's sheets
+    // Todo: Use a loop
     kubejs.shapeless(
         "create:iron_sheet",
         [

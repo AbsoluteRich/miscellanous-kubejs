@@ -1,3 +1,23 @@
+const crushableCrops = {
+    // Todo: Ars logs and Ars fruits, Farmer's Delight mushrooms and wild bushes, Twilight saplings and leaves, Tinkers saplings and leaves
+    2: [  // Seeds and berries
+        "supplementaries:flax_seeds",
+        "ars_nouveau:magebloom_crop",
+        "ars_nouveau:sourceberry_bush",
+        "farmersdelight:rice",
+        "farmersdelight:rice_panicle",
+        "farmersdelight:cabbage_seeds",
+        "farmersdelight:tomato_seeds",
+    ],
+    5: [  // Crops
+        "ars_nouveau:magebloom",
+        "alexsmobs:banana",
+        "farmersdelight:cabbage",
+        "farmersdelight:tomato",
+        "farmersdelight:onion",
+    ]
+}
+
 ServerEvents.recipes((kubejs) => {
     // Crushing Wheel recipes
     // Trades bonus resource production for ease of automation
@@ -50,27 +70,6 @@ ServerEvents.recipes((kubejs) => {
     })
 
     // Biofuel recipes for modded crops
-    // Seeds
-    const crushableCrops = {
-        // Todo: Ars logs and Ars fruits, Farmer's Delight mushrooms and wild bushes, Twilight saplings and leaves, Tinkers saplings and leaves
-        2: [
-            "supplementaries:flax_seeds",
-            "ars_nouveau:magebloom_crop",
-            "ars_nouveau:sourceberry_bush",
-            "farmersdelight:rice",
-            "farmersdelight:rice_panicle",
-            "farmersdelight:cabbage_seeds",
-            "farmersdelight:tomato_seeds",
-        ],
-        5: [
-            "ars_nouveau:magebloom",
-            "alexsmobs:banana",
-            "farmersdelight:cabbage",
-            "farmersdelight:tomato",
-            "farmersdelight:onion",
-        ]
-    }
-
     // Object.entries(crushableCrops).forEach(([biofuelCount, crops]) => {
     //     crops.forEach(cropId => {
     //         kubejs.custom({
